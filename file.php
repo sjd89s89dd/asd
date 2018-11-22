@@ -1,5 +1,8 @@
 <?php
+echo 123;
+
 $data = str_repeat("A", 99999);
+
 $ip = $_GET['ip'];
 $host = $_GET['host'];
 $path = "/";
