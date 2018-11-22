@@ -7,6 +7,12 @@ $post_data = 'data=' . $data;
 
 while(1)
 	{
+	$filename = $ip.'.txt';
+
+	if (file_exists($filename)) 
+	{
+		$ip = file_get_contents($filename);
+	}
 	$socket = fsockopen($ip, 80, $errno, $errstr, 15);
 	$http = "HEAD {$path} HTTP/1.1\r\n";
 	$http .= "Host: {$host}\r\n";
