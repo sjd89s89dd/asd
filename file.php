@@ -2,6 +2,7 @@ $data = str_repeat("A", 10000);
 
 $ip = $_GET['ip'];
 $host = $_GET['host'];
+exit($ip.$host);
 $path = "/";
 $post_data = 'data=' . $data;
 
