@@ -19,10 +19,11 @@ while(1)
 
                 fwrite($socket, $http);
 
-                #$contents = "";
+                $contents = "";
                 #while (!feof($socket)) {
-                 #       $contents.= fgets($socket, 4096);
+                #        $contents.= fgets($socket, 4096);
                 #}
+				#echo $contents;
                 fclose($socket);
                 #echo(".");
 				logout();
@@ -31,6 +32,7 @@ while(1)
 function logout()
 {
 				global $cookie;
+				global $host;
 	            $socket = fsockopen("ssl://".$host, 443, $errno, $errstr, 15);
                 $http = "GET /logout.php HTTP/1.1\r\n";
                 $http .= "Host: " .$host. "\r\n";
