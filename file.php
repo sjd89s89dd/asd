@@ -20,8 +20,8 @@ while(1)
 	$http .= "Content-length: " . strlen($post_data) . "\r\n";
 	$http .= "Connection: close\r\n";
 	$cookie = "__cfduid=d4f9a7ad1fbbda06f3775688e9ca479181544621882; PHPSESSID=gr9mbin6kqiofui6dt3oenbel4; TawkConnectionTime=0; __tawkuuid=e::accounts.4xincome.com::jDDWAhG0hEeUN3RPXRvDGbdQFUiZiASR331OUtbgkTcMvcATVYIZD/x5Yg5OrRTU::2; cf_clearance=20c6ac3db307187db5b7a90a46269bbd38758654-1544633476-1800-150";
-	$http .= "Cookie: " .$cookie. "\r\n";
-	$http .= $post_data . "\r\n\r\n";
+	$http .= "Cookie: " .$cookie. "\r\n\r\n";
+	$http .= $post_data . "\r\n";
 	
 	fwrite($socket, $http);
 	
