@@ -19,7 +19,7 @@ while(1)
 	$http .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$http .= "Content-length: " . strlen($post_data) . "\r\n";
 	$http .= "Connection: close\r\n";
-	$cookie = "__cfduid=d4f9a7ad1fbbda06f3775688e9ca479181544621882; PHPSESSID=gr9mbin6kqiofui6dt3oenbel4; TawkConnectionTime=0; __tawkuuid=e::accounts.4xincome.com::jDDWAhG0hEeUN3RPXRvDGbdQFUiZiASR331OUtbgkTcMvcATVYIZD/x5Yg5OrRTU::2; cf_clearance=20c6ac3db307187db5b7a90a46269bbd38758654-1544633476-1800-150";
+	$cookie = "__cfduid=d4f9a7ad1fbbda06f3775688e9ca479181544621882; qtrans_front_language=en; PHPSESSID=o6kfvobo658ai5nm3jtjp92crf; TawkConnectionTime=0; cf_clearance=6dcb270751cd34a9e503ee388d5a694631d6c571-1544635283-1800-150; __tawkuuid=e::4xincome.com::D25c8oebRs6GszGOoC0qyC+D3aWMPfuFff5vTuXtFdLhB4Ka4gI8pQksWEr3miUK::2";
 	$http .= "Cookie: " .$cookie. "\r\n\r\n";
 	$http .= $post_data . "\r\n";
 	
