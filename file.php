@@ -1,4 +1,4 @@
-$host = "4xincome.com";
+$host = "accounts.4xincome.com";
 $path = "/registration.php";
 while(1)
         {
@@ -21,11 +21,10 @@ while(1)
 
                 #$contents = "";
                 #while (!feof($socket)) {
-                #        $contents.= fgets($socket, 4096);
+                 #       $contents.= fgets($socket, 4096);
                 #}
-
                 fclose($socket);
-                echo(".");
+                #echo(".");
 				logout();
 
         }
@@ -45,10 +44,10 @@ function logout()
 
                 fwrite($socket, $http);
 
-                $contents = "";
-                while (!feof($socket)) {
-                        $contents.= fgets($socket, 4096);
-                }
+                #$contents = "";
+                #while (!feof($socket)) {
+                #        $contents.= fgets($socket, 4096);
+                #}
 
                 fclose($socket);
 }
