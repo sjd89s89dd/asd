@@ -19,13 +19,12 @@ while(1)
 
                 fwrite($socket, $http);
 
-                $contents = "";
-                while (!feof($socket)) {
-                        $contents.= fgets($socket, 4096);
-                }
-				echo $contents;
-                fclose($socket);
-exit();
+                #$contents = "";
+                #while (!feof($socket)) {
+                #        $contents.= fgets($socket, 4096);
+                #}
+		#		echo $contents;
+                #fclose($socket);
                 #echo(".");
 				#logout();
 
