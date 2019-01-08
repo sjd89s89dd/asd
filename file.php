@@ -19,7 +19,7 @@ while(1)
 
                 fwrite($socket, $http);
 
-                contents = "";
+                $contents = "";
                 while (!feof($socket)) {
                         $contents.= fgets($socket, 4096);
                 }
